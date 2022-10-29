@@ -5,7 +5,7 @@
 -- Dumped from database version 11.17
 -- Dumped by pg_dump version 14.4
 
--- Started on 2022-10-25 12:01:34 JST
+-- Started on 2022-10-30 07:41:36 JST
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -21,7 +21,7 @@ SET row_security = off;
 SET default_tablespace = '';
 
 --
--- TOC entry 196 (class 1259 OID 16402)
+-- TOC entry 196 (class 1259 OID 16386)
 -- Name: book_user; Type: TABLE; Schema: public; Owner: book_user
 --
 
@@ -38,7 +38,7 @@ CREATE TABLE public.book_user (
 ALTER TABLE public.book_user OWNER TO book_user;
 
 --
--- TOC entry 198 (class 1259 OID 16412)
+-- TOC entry 198 (class 1259 OID 16396)
 -- Name: books; Type: TABLE; Schema: public; Owner: book_user
 --
 
@@ -57,7 +57,7 @@ CREATE TABLE public.books (
 ALTER TABLE public.books OWNER TO book_user;
 
 --
--- TOC entry 197 (class 1259 OID 16410)
+-- TOC entry 197 (class 1259 OID 16394)
 -- Name: books_id_seq; Type: SEQUENCE; Schema: public; Owner: book_user
 --
 
@@ -82,7 +82,7 @@ ALTER SEQUENCE public.books_id_seq OWNED BY public.books.id;
 
 
 --
--- TOC entry 3108 (class 2604 OID 16415)
+-- TOC entry 3108 (class 2604 OID 16399)
 -- Name: books id; Type: DEFAULT; Schema: public; Owner: book_user
 --
 
@@ -90,26 +90,29 @@ ALTER TABLE ONLY public.books ALTER COLUMN id SET DEFAULT nextval('public.books_
 
 
 --
--- TOC entry 3234 (class 0 OID 16402)
+-- TOC entry 3234 (class 0 OID 16386)
 -- Dependencies: 196
 -- Data for Name: book_user; Type: TABLE DATA; Schema: public; Owner: book_user
 --
 
 COPY public.book_user (user_id, passwd, email, user_shi, user_mei, del) FROM stdin;
-test	aaa	test@test.com	te	st	f
-ccc	test	test@test.com	te	st	f
+1	12	11	111	11	f
+aaaaa	aaaaa	hayatesato1@gmail.com	とげ	とげ	f
+dddd	dddd	ddddd	dd	dd	f
+12	21	21	21	21	f
 \.
 
 
 --
--- TOC entry 3236 (class 0 OID 16412)
+-- TOC entry 3236 (class 0 OID 16396)
 -- Dependencies: 198
 -- Data for Name: books; Type: TABLE DATA; Schema: public; Owner: book_user
 --
 
 COPY public.books (id, name, volume, author, publisher, memo, create_date, del) FROM stdin;
-1	呪術廻戦	1巻	芥見下々	集英社	ちょっと汚れてる	2022-10-25 09:55:05.49237+09	t
-2	呪術廻戦	1巻	芥見下々	集英社	ちょっと汚れてる	2022-10-25 09:59:47.524202+09	f
+1	タケダ	jj	kk	kk	kljij	2022-10-25 23:34:05.972301+09	t
+2	cdcdc	dcdcd	dcd	cdcdcd	cdcdcd	2022-10-25 23:34:40.68308+09	f
+3	ヨユーc	cdcdc	dcdcdc	cdcd	dcdcdc	2022-10-25 23:58:58.956936+09	f
 \.
 
 
@@ -119,11 +122,11 @@ COPY public.books (id, name, volume, author, publisher, memo, create_date, del) 
 -- Name: books_id_seq; Type: SEQUENCE SET; Schema: public; Owner: book_user
 --
 
-SELECT pg_catalog.setval('public.books_id_seq', 2, true);
+SELECT pg_catalog.setval('public.books_id_seq', 3, true);
 
 
 --
--- TOC entry 3110 (class 2606 OID 16409)
+-- TOC entry 3110 (class 2606 OID 16393)
 -- Name: book_user book_user_pkey; Type: CONSTRAINT; Schema: public; Owner: book_user
 --
 
@@ -132,7 +135,7 @@ ALTER TABLE ONLY public.book_user
 
 
 --
--- TOC entry 3112 (class 2606 OID 16420)
+-- TOC entry 3112 (class 2606 OID 16404)
 -- Name: books books_pkey; Type: CONSTRAINT; Schema: public; Owner: book_user
 --
 
@@ -140,7 +143,7 @@ ALTER TABLE ONLY public.books
     ADD CONSTRAINT books_pkey PRIMARY KEY (id);
 
 
--- Completed on 2022-10-25 12:01:34 JST
+-- Completed on 2022-10-30 07:41:36 JST
 
 --
 -- PostgreSQL database dump complete
